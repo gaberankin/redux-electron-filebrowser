@@ -1,0 +1,61 @@
+$orange: #FFA500;
+$folder-list-width: 200px;
+$path-bar-height: 50px;
+body {
+	background-color: $orange;
+	font-family: sans-serif;
+	padding: 0;
+}
+.path-bar {
+	background-color: lighten($orange, 10%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: $folder-list-width;
+	height: $path-bar-height;
+	padding: 0;
+
+	.path-operations, .path-components {
+		margin: 2px;
+	}
+
+	button {
+		border-radius: 4px;
+		border:0;
+		color: #000;
+		background-color: lighten($orange, 20%);
+		margin: 2px;
+		&.path-component {
+			color: lighten(#000, 50%);
+			.path-dirname {
+				color: #000;
+			}
+		}
+		&:hover {
+			background-color: lighten($orange, 10%);
+		}
+		&:disabled {
+			color: lighten(#000, 70%);
+		}
+	}
+}
+
+.file-list {
+	overflow: auto;
+	position: fixed;
+	top: $path-bar-height;
+	bottom: 0;
+	left: 0;
+	right: $folder-list-width;
+}
+.folder-list {
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: $folder-list-width;
+	right: 0;
+	& > a {
+		display: block;
+	}
+}
