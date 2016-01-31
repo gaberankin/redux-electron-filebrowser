@@ -2,7 +2,7 @@ import React from 'react';
 import { sep as pathSeperator, resolve as pathResolve } from 'path';
 import {remote} from 'electron';
 
-const ltrimRegex = new RegExp(pathSeperator + "+$");
+const ltrimRegex = new RegExp((pathSeperator === '\\' ? '\\\\' : pathSeperator) + "+$"); //thanks windows...
 const ltrimSeperator = function(string) {
 	return string.replace(ltrimRegex, '');
 };

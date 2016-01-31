@@ -1,12 +1,16 @@
 {
-  "name": "redux-test",
+  "name": "redux-electron-filebrowser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/electron dist/js/main.js"
   },
-  "author": "gabe",
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/gaberankin/redux-electron-filebrowser.git"
+  },
+  "author": "gabe rankin",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.4.0",

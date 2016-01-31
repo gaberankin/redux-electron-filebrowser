@@ -9,7 +9,7 @@ class FileBrowserApp extends React.Component {
 
 		const { path: { path, files, folders }, dispatch } = this.props;
 		const actions = bindActionCreators(PathActions, dispatch);
-
+		actions.gotoPath(path);
 		return (
 			<div className="file-browser-app">
 				<PathBar path={path} actions={actions} />
