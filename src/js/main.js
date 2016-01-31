@@ -1,15 +1,18 @@
 import electron from 'electron';
+import * as helpers from './helpers/main';
+
 const app = electron.app;  // Module to control application life.
 const BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
-
+app.helpers = helpers;
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
 	// On OS X it is common for applications and their menu bar
 	// to stay active until the user quits explicitly with Cmd + Q
+	helpers.saveconfig();
 	app.quit();
 });
 

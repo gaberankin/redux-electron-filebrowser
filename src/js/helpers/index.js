@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
+import {remote} from 'electron';
 
 export function readdir(dirPath) {
 	return new Promise(function(resolve, reject){

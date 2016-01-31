@@ -3,15 +3,17 @@ import React from 'react';
 class FileListFile extends React.Component {
 
 	render () {
-		let classNames = ['file'];
-		let clickHandler = e => this.props.actions.gotoPath(this.props.file.path);
+		let classNames = 'file';
+		let clickHandler = null;
 		if(!this.props.file.readable) {
-			classNames.push('unreadable');
+			classNames += ' unreadable';
 			clickHandler = e => this.props.actions.alertError(`file ${this.props.file.path} is not accessible`);
+		} else {
+			clickHandler = e => this.props.actions.gotoPath(this.props.file.path);
 		}
 
 		return (
-			<div className={classNames.join(' ')} onClick={clickHandler}>
+			<div className={classNames} onClick={clickHandler}>
 				<span className={'file-name'}>{this.props.file.name}</span>
 			</div>
 		);
