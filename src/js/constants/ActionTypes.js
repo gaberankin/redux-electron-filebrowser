@@ -8,3 +8,4 @@ export const UPDATE_FOLDERS = 'UPDATE_FOLDERS';
 export const GOTO_PATH = 'GOTO_PATH';
 export const ALERT_ERROR = 'ALERT_ERROR';
 export const OPEN_FILE = 'OPEN_FILE';
+export const SORT_FILES = 'SORT_FILES';

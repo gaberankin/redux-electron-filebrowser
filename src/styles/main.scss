@@ -47,6 +47,44 @@ body {
 	bottom: 0;
 	left: 0;
 	right: $folder-list-width;
+	& > table {
+		border-collapse: collapse;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		th, td {
+			padding: 3px;
+			text-align: left;
+		}
+		thead {
+			.fa-sort-asc {
+				display: none;
+			}
+			tr.file-sortby-name {
+				th.file-header-name {
+					color: blue;
+				}
+				&.file-sortdir-asc {
+					.fa-sort-asc {
+						display: inline-block;
+					}
+				}
+			}
+			tr.file-sortby-size {
+				th.file-header-size {
+					color: blue;
+				}
+			}
+			tr.file-sortby-mtime {
+				th.file-header-mtime {
+					color: blue;
+				}
+			}
+			th {
+				border-bottom: 1px solid darken($orange, 10%);
+			}
+		}
+	}
 }
 .folder-list {
 	overflow: auto;

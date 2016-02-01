@@ -52,6 +52,14 @@ export function alertError(text) {
 	};
 }
 
+export function sortFiles(by, dir = 'toggle') {
+	return {
+		type: types.SORT_FILES,
+		by,
+		dir
+	};
+}
+
 export function gotoPath(path) {
 	return dispatch => {
 		helpers.readdir(path).then(function(info) {

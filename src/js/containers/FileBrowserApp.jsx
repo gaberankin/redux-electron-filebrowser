@@ -12,13 +12,13 @@ class FileBrowserApp extends React.Component {
 		this.actions.initApplication();
 	}
 	render () {
-		const { path: { path, files, folders }, dispatch } = this.props;
+		const { path: { path, files, folders, fileSort }, dispatch } = this.props;
 		// const actions = bindActionCreators(PathActions, dispatch);
 
 		return (
 			<div className="file-browser-app">
 				<PathBar path={path} actions={this.actions} />
-				<FileList path={path} files={files} actions={this.actions} />
+				<FileList path={path} files={files} fileSort={fileSort} actions={this.actions} />
 				<FolderList path={path} folders={folders} actions={this.actions} />
 			</div>
 		);
