@@ -38,12 +38,27 @@ class FileList extends React.Component {
 		return (
 			<div className={'file-list'}>
 				<table>
+					<colgroup>
+						<col className={'colgroup-name'} />
+						<col className={'colgroup-size'} />
+						<col className={'colgroup-mtime'} />
+						<col className={'colgroup-other'} />
+					</colgroup>
 					<thead>
 						<tr className={'file-header file-sortby-' + this.props.fileSort.by + ' file-sortdir-' + this.props.fileSort.dir}>
-							<th className={'file-header-name'} onClick={e => this.props.actions.sortFiles('name')}>Name<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i></th>
-							<th className={'file-header-size'} onClick={e => this.props.actions.sortFiles('size')}>Size<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i></th>
-							<th className={'file-header-mtime'} onClick={e => this.props.actions.sortFiles('mtime')}>Last Modified<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i></th>
-							<th> </th>
+							<th className={'file-header-name'} onClick={e => this.props.actions.sortFiles('name')} onMouseMove={this.handleMouseMove}>
+								Name
+								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
+							</th>
+							<th className={'file-header-size'} onClick={e => this.props.actions.sortFiles('size')}>
+								Size
+								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
+							</th>
+							<th className={'file-header-mtime'} onClick={e => this.props.actions.sortFiles('mtime')}>
+								Last Modified
+								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
+							</th>
+							<th className={'file-header-other'}> </th>
 						</tr>
 					</thead>
 					<tbody>{filesReact}</tbody>
@@ -51,7 +66,14 @@ class FileList extends React.Component {
 			</div>
 		);
 	}
-
+	handleMouseMove(e) {
+		let rect = e.target.getBoundingClientRect();
+		if(e.clientX > rect.right - 5 && e.clientX <= rect.right) {
+			e.target.style.cursor = 'ew-resize';
+		} else {
+			e.target.style.cursor = '';
+		}
+	}
 }
 
 FileList.propTypes = {
