@@ -11,14 +11,34 @@ body {
 	background-color: $background-color;
 	font-family: sans-serif;
 	padding: 0;
+	margin: 0;
+
+	.file-browser-app {
+		display: flex;
+		height: 100vh;
+		flex-direction: row;
+		.file-browser-left {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			.path-bar-container {
+
+			}
+			.file-list-container {
+				flex: 1;
+				overflow: auto;
+			}
+
+		}
+		.file-browser-right {
+			flex: 0 0 12em;
+			overflow: auto;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8) inset;
+		}
+	}
 }
 .path-bar {
 	background-color: $path-bar-background-color;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: $folder-list-width;
-	height: $path-bar-height;
 	padding: 0;
 
 	.path-operations, .path-components {
@@ -49,12 +69,6 @@ body {
 }
 
 .file-list {
-	overflow: auto;
-	position: fixed;
-	top: $path-bar-height;
-	bottom: 0;
-	left: 0;
-	right: $folder-list-width;
 	& > table {
 		border-collapse: collapse;
 		padding: 0;
@@ -102,13 +116,6 @@ body {
 	}
 }
 .folder-list {
-	overflow: auto;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	width: $folder-list-width;
-	right: 0;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8) inset;
 	& > a {
 		display: block;
 		padding:0.1em 0.1em 0.1em 1.4em;

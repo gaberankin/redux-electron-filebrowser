@@ -17,9 +17,17 @@ class FileBrowserApp extends React.Component {
 
 		return (
 			<div className="file-browser-app">
-				<PathBar path={path} actions={this.actions} />
-				<FileList path={path} files={files} fileSort={fileSort} actions={this.actions} />
-				<FolderList path={path} folders={folders} actions={this.actions} />
+				<div className="file-browser-left">
+					<div className="path-bar-container">
+						<PathBar path={path} actions={this.actions} />
+					</div>
+					<div className="file-list-container">
+						<FileList path={path} files={files} fileSort={fileSort} actions={this.actions} />
+					</div>
+				</div>
+				<div className="file-browser-right">
+					<FolderList path={path} folders={folders} actions={this.actions} />
+				</div>
 			</div>
 		);
 	}
