@@ -50,11 +50,11 @@ class FileList extends React.Component {
 								Name
 								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
 							</th>
-							<th className={'file-header-size'} onClick={e => this.props.actions.sortFiles('size')}>
+							<th className={'file-header-size'} onClick={e => this.props.actions.sortFiles('size')} onMouseMove={this.handleMouseMove}>
 								Size
 								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
 							</th>
-							<th className={'file-header-mtime'} onClick={e => this.props.actions.sortFiles('mtime')}>
+							<th className={'file-header-mtime'} onClick={e => this.props.actions.sortFiles('mtime')} onMouseMove={this.handleMouseMove}>
 								Last Modified
 								<i className="fa fa-sort-asc"></i><i className="fa fa-sort-desc"></i>
 							</th>
